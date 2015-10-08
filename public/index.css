@@ -1,0 +1,26 @@
+html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  #input {
+    margin: 0;
+    padding: 10px;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    font-family: '"PT Mono", Consolas, Monaco, Menlo, monospace';
+    color: #ddd;
+    background-color: #333;
+    font-size: 20px;
+    box-sizing:border-box;
+  }
+  #code{
+    position: absolute;
+    left: 50%;
+    top:0;
+    width: 50%;
+    height: 100%;
+    background: #000;
+  }

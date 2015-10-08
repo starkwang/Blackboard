@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mashiro</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/public/shCore.js"></script>
+  <script type="text/javascript" src="/public/shBrushCss.js"></script>
+  <script type="text/javascript" src="/public/shBrushJScript.js"></script>
+  <script type="text/javascript" src="/public/shBrushXml.js"></script>
+  <link rel="stylesheet" type="text/css" href="/public/shCore.css">
+  <link rel="stylesheet" type="text/css" href="/public/shCoreEmacs.css">
+  <link rel="stylesheet" type="text/css" href="/public/shThemeEmacs.css">
+  <link rel="stylesheet" type="text/css" href="/public/index.css">
+  <script>
+  var socket = io.connect('http://localhost:8080');
+  socket.on('update', function(data) {
+    document.getElementById('input').value = data;
+    document.getElementById('code').innerHTML = '<pre class="brush: js;">'+data+'</pre>';
+    SyntaxHighlighter.highlight();
+  });
+
+  function input() {
+    var value = document.getElementById('input').value;
+    socket.emit('input', value);
+    document.getElementById('code').innerHTML = '<pre class="brush: js;">'+value+'</pre>';
+    SyntaxHighlighter.highlight();
+  }
+  SyntaxHighlighter.all();
+  </script>
+</head>
+
+<body>
+  <textarea type="text" onkeyup="input()" id="input"></textarea>
+  <div id="code">
+    <pre class="brush: js;">
+</pre>
+  </div>
+</body>
+
+</html>
