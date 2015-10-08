@@ -7,12 +7,12 @@ var express = require('express'),
 
 server.listen(8080);
 console.log('Running at port 8080...');
-console.log(alphabet('MASHIRO', 'planar'));
+console.log(alphabet('STARK', 'planar'));
 
 app.get('/', function(req, res) {
     res.sendfile(__dirname + '/client/index.html');
 });
-app.use('/public',express.static(__dirname + '/public/'));
+app.use('/static',express.static(__dirname + '/static/'));
 io.sockets.on('connection', function(socket) {
     socket.on('input', function(data) {
         socket.broadcast.emit('update', data);

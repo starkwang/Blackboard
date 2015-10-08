@@ -4,33 +4,15 @@
 <head>
   <title>Black Board</title>
   <script src="/socket.io/socket.io.js"></script>
-  <script type="text/javascript" src="/public/shCore.js"></script>
-  <script type="text/javascript" src="/public/shBrushCss.js"></script>
-  <script type="text/javascript" src="/public/shBrushJScript.js"></script>
-  <script type="text/javascript" src="/public/shBrushXml.js"></script>
-  <link rel="stylesheet" type="text/css" href="/public/shCore.css">
-  <link rel="stylesheet" type="text/css" href="/public/shCoreEmacs.css">
-  <link rel="stylesheet" type="text/css" href="/public/shThemeEmacs.css">
-  <link rel="stylesheet" type="text/css" href="/public/index.css">
-  <script>
-  var socket = io.connect('http://localhost:8080');
-  socket.on('update', function(data) {
-    document.getElementById('input').value = data;
-    render();
-  });
-
-  function render(){
-    var value = document.getElementById('input').value;
-    document.getElementById('code').innerHTML = '<pre class="brush: js;">'+value+'</pre>';
-    SyntaxHighlighter.highlight();
-  }
-  function input() {
-    render();
-    var value = document.getElementById('input').value;
-    socket.emit('input', value);
-  }
-  SyntaxHighlighter.all();
-  </script>
+  <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shCore.js"></script>
+  <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shBrushCss.js"></script>
+  <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+  <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shBrushXml.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/syntaxhighlighter/styles/shCore.css">
+  <link rel="stylesheet" type="text/css" href="/static/syntaxhighlighter/styles/shCoreEmacs.css">
+  <link rel="stylesheet" type="text/css" href="/static/syntaxhighlighter/styles/shThemeEmacs.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+  <script type="text/javascript" src="/static/js/index.js"></script>
 </head>
 
 <body>
