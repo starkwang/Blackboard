@@ -22,5 +22,6 @@ html,
     top:0;
     width: 50%;
     height: 100%;
+    overflow: auto;
     background: #000;
   }
