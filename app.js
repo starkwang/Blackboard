@@ -9,7 +9,7 @@ console.log('Running at port 8080...');
 
 
 app.get('/', function(req, res) {
-    res.sendfile(_t_dirname + '/client/index.hml');
+    res.sendfile(__dirname + '/client/index.hml');
 });
 app.use('/js', express.static(__dirname + '/client/build/js'));
 app.use('/css', express.static(__dirname + '/client/build/css'));
