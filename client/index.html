@@ -1,28 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 
 <head>
   <title>Black Board</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shCore.js"></script>
-  <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shBrushCss.js"></script>
-  <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shBrushJScript.js"></script>
-  <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shBrushXml.js"></script>
-  <script type="text/javascript" src="/static/js/tabIndent.js"></script>
-  <link rel="stylesheet" type="text/css" href="/static/syntaxhighlighter/styles/shCore.css">
-  <link rel="stylesheet" type="text/css" href="/static/syntaxhighlighter/styles/shCoreEmacs.css">
-  <link rel="stylesheet" type="text/css" href="/static/syntaxhighlighter/styles/shThemeEmacs.css">
-  <link rel="stylesheet" type="text/css" href="/static/css/index.css">
-  <script type="text/javascript" src="/static/js/jquery-2.0.2.min.js"></script>
+
+  <script type="text/javascript" src="/js/bundle.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/index.css">
   
 </head>
 
-<body>
-  <textarea type="text" onkeyup="input()" class="tabIndent" id="input"></textarea>
-  <div id="code">
-    <pre class="brush: xml;">
-</pre>
-  </div>
+<body ng-controller="myController">
+  <textarea type="text" ng-change="onChange()" ng-model="content"></textarea>
+
+  <div>{{content}}</div>
 </body>
-<script type="text/javascript" src="/static/js/index.js"></script>
 </html>
